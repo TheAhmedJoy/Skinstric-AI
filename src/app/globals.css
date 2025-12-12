@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+html,
+body {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.animate-spin-slow {
+  animation: spin 50s linear infinite;
+}
+
+.animate-spin-slower {
+  animation: spin 70s linear infinite;
+}
+
+.animate-spin-slowest {
+  animation: spin 85s linear infinite;
+}
+
+.animate-spin-load {
+  animation: spin 5s linear infinite;
+}
+
+.animate-spin-loader {
+  animation: spin 10s linear infinite;
+}
+
+.animate-spin-loadest {
+  animation: spin 15s linear infinite;
+}
+
+.diamond-container {
+  pointer-events: none;
+}
+
+.demographics-button:hover+.diamond-container .demographics-diamond,
+.demographics-button:hover~.diamond-container .demographics-diamond {
+  width: 602px !important;
+  height: 602px !important;
+  opacity: 1 !important;
+}
+
+.animate-pulse-grow {
+  animation: grow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes grow-pulse {
+  0% {
+    transform: scale(0.95);
+  }
+
+  40% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
