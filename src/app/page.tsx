@@ -1,7 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import localFont from "next/font/local";
 import ButtonLeft from "./assets/button-icon-shrunk-left.svg"
 import ButtonRight from "./assets/button-icon-shrunk-right.svg"
+import ClientAnimationWrapper from "./components/animations/ClientAnimations";
+
+const roobertFontLight = localFont({
+  src: "./fonts/RoobertTRIAL-Light.woff2",
+  weight: "300"
+})
+
+const roobertFontRegular = localFont({
+  src: "./fonts/RoobertTRIAL-Regular.woff2",
+  weight: "400"
+})
+
+const roobertFontSemiBold = localFont({
+  src: "./fonts/RoobertTRIAL-SemiBold.woff2",
+  weight: "600"
+})
+
 
 export default function Home() {
   return (
@@ -14,11 +32,11 @@ export default function Home() {
           <div className="w-[420px] h-[420px] border border-dotted border-[#A0A4AB] rotate-45 absolute top-1/2 left-1/2 -translate-x-[52%] -translate-y-1/2"></div>
         </div>
 
-        <div id="main-heading" className="relative z-10 text-center">
+        <div id="main-heading" className={`relative z-10 text-center ${roobertFontLight.className}`}>
           <h1 className="text-[60px] text-[#1A1B1C] lg:text-[100px] font-inter font-normal tracking-tighter leading-none opacity-100">
             Sophisticated
             <br />
-            <span className="block text-[#1a1b1c8a]">skincare</span>
+            <span className="block text-[#1A1B1C]">skincare</span>
           </h1>
         </div>
 
@@ -48,7 +66,8 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="hidden lg:block fixed bottom-[calc(-7vh)] left-[calc(-20vw)] xl:left-[calc(-27vw)] 2xl:left-[calc(-31vw)] [@media(width>=1920px)]:left-[calc(-33vw)] font-normal text-sm text-[#1A1B1C] space-y-3 uppercase">
+        <div className={`hidden lg:block fixed bottom-[calc(-7vh)] left-[calc(-20vw)] xl:left-[calc(-27vw)] 2xl:left-[calc(-31vw)] 
+        [@media(width>=1920px)]:left-[calc(-33vw)] font-normal text-sm text-[#1A1B1C] space-y-3 uppercase ${roobertFontRegular.className}`}>
           <p>
             Skinstric developed an A.I. that creates a
             <br />
@@ -66,10 +85,12 @@ export default function Home() {
             <div className="w-full h-full border border-dotted border-[#A0A4AB] rotate-45 fixed inset-0"></div>
             <button
               id="discover-button"
-              className="group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md text-sm font-normal text-[#1A1B1C] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer disabled:opacity-50 h-9 absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/5 xl:translate-x-1/6 [@media(width>=1920px)]:translate-x-1/20 px-3 py-1"
-            >
+              className="group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md 
+              text-sm font-normal text-[#1A1B1C] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring 
+              cursor-pointer disabled:opacity-50 h-9 absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/5 xl:translate-x-1/6 
+              [@media(width>=1920px)]:translate-x-1/20 px-3 py-1">
               <Image className="group-hover:scale-110 duration-300" src={ButtonLeft} alt="Left button" />
-              <span>DISCOVER A.I.</span>
+              <span className={roobertFontSemiBold.className}>DISCOVER A.I.</span>
             </button>
           </div>
         </div>
@@ -83,14 +104,17 @@ export default function Home() {
             <Link href="/testing">
               <button
                 id="take-test-button"
-                className="group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md text-sm font-normal text-[#1A1B1C] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer disabled:opacity-50 h-9 absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/5 xl:-translate-x-1/6 [@media(width>=1920px)]:-translate-x-1/20 px-3 py-1"
-              >
+                className={`group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md 
+                text-sm font-normal text-[#1A1B1C] transition-colors focus-visible:outline-none focus-visible:ring-1 
+                focus-visible:ring-ring cursor-pointer disabled:opacity-50 h-9 absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/5 xl:-translate-x-1/6 
+                [@media(width>=1920px)]:-translate-x-1/20 px-3 py-1 ${roobertFontSemiBold.className}`}>
                 TAKE TEST
                 <Image className="group-hover:scale-110 duration-300" src={ButtonRight} alt="Right button" />
               </button>
             </Link>
           </div>
         </div>
+        <ClientAnimationWrapper />
       </div>
     </div>
   );
