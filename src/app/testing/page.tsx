@@ -162,7 +162,7 @@ function FormInputErrorMessage({ error }: { error?: string[] }) {
   )
 }
 
-export default function Page() {
+export default function Testing() {
   const [state, formAction] = useActionState(formSubmition, {
     step: 1,
     errors: {}

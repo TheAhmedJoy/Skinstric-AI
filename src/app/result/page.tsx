@@ -11,7 +11,7 @@ const roobertFontSemiBold = localFont({
   weight: "600"
 })
 
-export default function page() {
+export default function Result() {
     return (
         <div className="min-h-[92vh] flex flex-col bg-white relative md:pt-16 justify-center">
             <div className="absolute top-2 left-9 md:left-8 text-left">
