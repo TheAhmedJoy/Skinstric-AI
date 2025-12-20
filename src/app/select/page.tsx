@@ -38,7 +38,7 @@ export default function Select() {
                         <BackButton />
                     </Link>
                     <Link href="/summary">
-                        <ProceedButton isSummary={true}/>
+                        <ProceedButton isSummary={true} isHome={false}/>
                     </Link>
                 </div>
             </div>

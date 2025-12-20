@@ -33,7 +33,7 @@ export default function Result() {
 
                     <Link href="/select">
                         <div className="hidden">
-                            <ProceedButton isSummary={false}/>
+                            <ProceedButton isSummary={false} isHome={false}/>
                         </div>
                     </Link>
                 </div>

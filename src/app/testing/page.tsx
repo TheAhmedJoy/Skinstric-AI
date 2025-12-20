@@ -274,7 +274,7 @@ export default function Testing() {
 
         {state.step === 3 && (
           <Link href="/result" className="inline-block">
-            <ProceedButton isSummary={false}/>
+            <ProceedButton isSummary={false} isHome={false}/>
           </Link>
         )}
       </div>
