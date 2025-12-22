@@ -10,12 +10,12 @@ import Image from "next/image"
 import CameraCaptureIcon from "../../components/assets/Capture-Image-icon.svg"
 
 const roobertFontRegular = localFont({
-  src: "../fonts/RoobertTRIAL-Regular.woff2",
+  src: "../../fonts/RoobertTRIAL-Regular.woff2",
   weight: "400"
 })
 
 const roobertFontSemiBold = localFont({
-  src: "../fonts/RoobertTRIAL-SemiBold.woff2",
+  src: "../../fonts/RoobertTRIAL-SemiBold.woff2",
   weight: "600"
 })
 
@@ -254,7 +254,7 @@ export default function CameraCapture() {
         cameraImage && (
           <div className="absolute inset-0 z-10 flex flex-col items-center">
             <img src={cameraImage} className="absolute inset-0 w-full h-full object-cover" alt="Captured Camera Image" />
-            <div className={`absolute text-sm leading-6 uppercase text-[#FCFCFC] top-40 ${roobertFontRegular.className}`}>
+            <div className={`absolute text-sm leading-6 uppercase text-[#FCFCFC] top-40 ${roobertFontSemiBold.className}`}>
               Good Shot!
             </div>
 
