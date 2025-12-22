@@ -26,7 +26,9 @@ export default function BackButton({ isWhite }: BackType) {
                     <Image className="group-hover:scale-110 duration-300" src={ButtonLeftWhite} alt="Left button" />
                     : <Image className="group-hover:scale-110 duration-300" src={ButtonLeft} alt="Left button" />
                 }
-                <span className={`${isWhite ?? "text-white"} text-sm font-semibold hidden sm:block ml-6 ${roobertFontSemiBold.className}`}>
+                <span className={isWhite ?
+                    `text-white text-sm font-semibold hidden sm:block ml-6 ${roobertFontSemiBold.className}` :
+                    `text-sm font-semibold hidden sm:block ml-6 ${roobertFontSemiBold.className}`}>
                     BACK
                 </span>
             </div>
