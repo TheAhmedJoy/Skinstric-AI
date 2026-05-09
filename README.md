@@ -1,5 +1,7 @@
 # Skinstric AI
 
+**[Live Demo](https://skinstric-ai-ahmed-ali.vercel.app/)**
+
 A web app demo for **Skinstric**, an AI-driven skincare brand. The user introduces themselves, lets the app capture or upload a photo, and the AI returns a confidence-scored prediction of their **race, age, and sex** — visualised through an interactive radial chart and an editable answer panel.
 
 The project is a faithful reproduction of the Skinstric onboarding/analysis flow, built on the latest Next.js + React stack with rich GSAP-driven landing animations.
