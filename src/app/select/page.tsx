@@ -3,6 +3,7 @@ import localFont from "next/font/local"
 import SelectOptions from "../components/UI/SelectOptions"
 import BackButton from "../components/UI/BackButton"
 import ProceedButton from "../components/UI/ProceedButton"
+import Disclaimer from "../components/UI/Disclaimer"
 
 const roobertFontRegular = localFont({
     src: "../fonts/RoobertTRIAL-Regular.woff2",
@@ -32,12 +33,14 @@ export default function Select() {
                 <SelectOptions />
             </div>
 
-            <div className="pt-4 md:pt-12 pb-8 bg-white sticky md:static bottom-40 mb-0 md:mb-0">
+            <Disclaimer className="mb-4" />
+
+            <div className="pt-4 md:pt-2 pb-8 bg-white sticky md:static bottom-40 mb-0 md:mb-0">
                 <div className="flex justify-between max-w-full mx-auto px-13 md:px-9">
                     <Link href="/result">
                         <BackButton isWhite={false}/>
                     </Link>
-                    <Link href="/summary">
+                    <Link href="/demographics">
                         <ProceedButton isSummary={true} isHome={false}/>
                     </Link>
                 </div>
