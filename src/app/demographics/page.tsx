@@ -4,6 +4,7 @@ import Demographics from "../components/Demographics"
 import RadialChart from "../components/RadicalChart"
 import BackButton from "../components/UI/BackButton"
 import ProceedButton from "../components/UI/ProceedButton"
+import Disclaimer from "../components/UI/Disclaimer"
 
 const roobertFontRegular = localFont({
   src: "../fonts/RoobertTRIAL-Regular.woff2",
@@ -18,8 +19,8 @@ const roobertFontSemiBold = localFont({
 export default function Summary() {
   return (
     <div className="h-screen md:h-[90vh] flex flex-col md:mt-5">
-      <main className="flex-1 w-full bg-white md:overflow-hidden overflow-auto">
-        <div className="md:h-full max-w-full mx-5 px-4 md:px-auto flex flex-col">
+      <main className="flex-1 w-full bg-white overflow-auto">
+        <div className="md:h-full max-w-full mx-5 px-4 md:px-auto flex flex-col min-h-0">
           <div className="text-start ml-4 mb-4 md:mb-10 md:ml-0">
             <h2 className={`text-base md:text-base font-semibold mb-1 leading-6 ${roobertFontSemiBold.className}`}>
               A.I. ANALYSIS
@@ -36,7 +37,9 @@ export default function Summary() {
             <RadialChart />
           </Demographics>
 
-          <div className="pt-4 md:pt-[37px] pb-6 bg-white sticky bottom-40 md:static md:bottom-0 mb-8 md:mb-16">
+          <Disclaimer className="mt-6 md:mt-2" />
+
+          <div className="pt-4 md:pt-[37px] pb-6 bg-white sticky bottom-0 md:static z-10 mb-8 md:mb-16">
             <div className="flex justify-between max-w-full mx-auto px-4 md:px-0">
               <Link href="/select">
                 <BackButton isWhite={false}/>
