@@ -126,11 +126,6 @@ const RadialChart: React.FC = () => {
                         </p>
                     </div>
                 </div>
-
-                <p className="md:absolute text-xs text-[#A0A4AB] md:text-sm lg:text-base font-normal mb-1 leading-6 
-                        md:bottom-[-15%] md:left-[22%] lg:left-[30%] xl:left-[40%] 2xl:left-[45%]">
-                    If A.I. estimate is wrong, select the correct one.
-                </p>
             </div>
 
             <div className="bg-gray-100 pt-4 pb-4 md:border-t">
