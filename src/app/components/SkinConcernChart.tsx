@@ -43,11 +43,16 @@ const SkinConcernChart: React.FC = () => {
 
   return (
     <div className="mt-6 mb-10 md:mb-10">
-      <div className="flex items-center justify-between mb-4">
-        <h4 className={`text-base leading-6 tracking-tight font-medium ${roobertFontMedium.className}`}>
-          IDENTIFIED CONCERNS
-        </h4>
-        <button className={`text-xs md:text-sm text-[#A0A4AB] hover:text-[#1A1B1C] underline underline-offset-2 cursor-pointer transition-colors ${roobertFontRegular.className}`}
+      <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-4">
+        <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
+          <h4 className={`text-base leading-6 tracking-tight font-medium text-black ${roobertFontMedium.className}`}>
+            IDENTIFIED CONCERNS
+          </h4>
+          <p className={`text-[15px] md:text-[17.5px] text-[#A0A4AB] leading-6 tracking-tight ${roobertFontRegular.className}`}>
+            Rating Scale: 1 - Minimal, 2 - Mild, 3 - Moderate, 4 - Significant, 5 - Severe.
+          </p>
+        </div>
+        <button className={`text-xs md:text-sm text-[#A0A4AB] hover:text-[#1A1B1C] underline underline-offset-2 cursor-pointer transition-colors self-start md:self-auto ${roobertFontRegular.className}`}
                 onClick={reanalyze} >
           Re-analyze
         </button>
@@ -56,18 +61,18 @@ const SkinConcernChart: React.FC = () => {
       {data.concerns.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
           {data.concerns.map((concern, index) => (
-            <div key={index} className="bg-[#F3F3F4] border-t border-[#1A1B1C] p-4 flex flex-col">
+            <div key={index} className="bg-[#F3F3F4] border-t border-[#1A1B1C] p-4 flex flex-col text-black">
               <div className="flex items-start justify-between gap-3 mb-3">
-                <h5 className={`text-base font-semibold uppercase tracking-tight leading-6 ${roobertFontSemiBold.className}`}>
+                <h5 className={`text-base font-semibold uppercase tracking-tight leading-6 text-black ${roobertFontSemiBold.className}`}>
                   {concern.name}
                 </h5>
                 <SeverityBar severity={concern.severity} />
               </div>
-              <p className={`text-sm leading-6 text-[#1A1B1C] mb-3 ${roobertFontRegular.className}`}>
+              <p className={`text-sm leading-6 text-black mb-3 ${roobertFontRegular.className}`}>
                 {concern.observation}
               </p>
               {concern.treatment && (
-                <p className={`text-sm leading-6 text-[#A0A4AB] mt-auto ${roobertFontRegular.className}`}>
+                <p className={`text-sm leading-6 text-black mt-auto ${roobertFontRegular.className}`}>
                   &rarr; {concern.treatment}
                 </p>
               )}
@@ -81,43 +86,47 @@ const SkinConcernChart: React.FC = () => {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div className="bg-[#F3F3F4] border-t border-[#1A1B1C] p-4">
-          <h4 className={`text-base font-medium tracking-tight mb-3 ${roobertFontMedium.className}`}>
+        <div className="bg-[#F3F3F4] border-t border-[#1A1B1C] p-4 text-black">
+          <h4 className={`text-base font-medium tracking-tight mb-3 text-black ${roobertFontMedium.className}`}>
             TOP PRIORITIES
           </h4>
           {data.priorities.length > 0 ? (
             <ol className="space-y-2">
               {data.priorities.map((priority, index) => (
-                <li key={index} className={`flex gap-2 text-sm leading-6 ${roobertFontRegular.className}`}>
-                  <span className={`font-semibold ${roobertFontSemiBold.className}`}>
+                <li key={index} className={`flex gap-2 text-sm leading-6 text-black ${roobertFontRegular.className}`}>
+                  <span className={`font-semibold text-black ${roobertFontSemiBold.className}`}>
                     {index + 1}.
                   </span>
-                  <span>{priority}</span>
+                  <span className="text-black">{priority}</span>
                 </li>
               ))}
             </ol>
           ) : (
-            <p className={`text-sm text-[#A0A4AB] ${roobertFontRegular.className}`}>
+            <p className={`text-sm text-black ${roobertFontRegular.className}`}>
               No priority concerns reported.
             </p>
           )}
         </div>
 
-        <div className="bg-[#F3F3F4] border-t border-[#1A1B1C] p-4">
-          <h4 className={`text-base font-medium tracking-tight mb-3 ${roobertFontMedium.className}`}>
+        <div className="bg-[#F3F3F4] border-t border-[#1A1B1C] p-4 text-black">
+          <h4 className={`text-base font-medium tracking-tight mb-3 text-black ${roobertFontMedium.className}`}>
             RECOMMENDED ROUTINE
           </h4>
-          <p className={`text-sm leading-6 text-[#1A1B1C] ${roobertFontRegular.className}`}>
+          <p className={`text-sm leading-6 text-black ${roobertFontRegular.className}`}>
             {data.routine || "No routine recommendation provided."}
           </p>
         </div>
       </div>
 
       {data.limitations && data.limitations.trim() !== "" && (
-        <p className={`text-xs md:text-sm text-[#A0A4AB] mt-6 leading-6 ${roobertFontRegular.className}`}>
-          <span className="font-medium">Assessment note:</span>{" "}
-          {data.limitations}
-        </p>
+        <div className="bg-[#F3F3F4] border-t border-[#1A1B1C] p-4 mt-6 text-black">
+          <h4 className={`text-base font-medium tracking-tight mb-3 text-black ${roobertFontMedium.className}`}>
+            ASSESSMENT NOTE
+          </h4>
+          <p className={`text-sm leading-6 text-black ${roobertFontRegular.className}`}>
+            {data.limitations}
+          </p>
+        </div>
       )}
     </div>
   )

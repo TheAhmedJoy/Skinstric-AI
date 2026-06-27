@@ -15,10 +15,10 @@ type ProceedType = {
 export default function ProceedButton({ isSummary, isHome }: ProceedType) {
     return (
         <div>
-            <div className=" w-12 h-12 flex items-center justify-center border 
+            <div className=" w-12 h-12 flex items-center justify-center border
             border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
-                <span className="-rotate-45deg text-xs font-semibold sm:hidden">
-                    {isHome ? "HOME" : (isSummary ? "GET SUMMARY" : "PROCEED")}
+                <span className={`-rotate-45 ${isSummary ? "text-[8px]" : "text-[10px]"} font-semibold sm:hidden text-center leading-tight px-1`}>
+                    {isHome ? "HOME" : (isSummary ? (<>GET<br />SUMMARY</>) : "PROCEED")}
                 </span>
             </div>
             <div className="group hidden sm:flex flex-row relative justify-center items-center">

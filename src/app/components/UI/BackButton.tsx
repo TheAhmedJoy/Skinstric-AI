@@ -15,9 +15,9 @@ type BackType = {
 export default function BackButton({ isWhite }: BackType) {
     return (
         <div>
-            <div className="relative w-12 h-12 flex items-center justify-center border 
+            <div className="relative w-12 h-12 flex items-center justify-center border
             border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
-                <span className="-rotate-45deg text-xs font-semibold sm:hidden">
+                <span className="-rotate-45 text-[10px] font-semibold sm:hidden text-center leading-tight px-1">
                     BACK
                 </span>
             </div>

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react"
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar"
-import "react-circular-progressbar/dist/styles.css"
 import { useDemographicData, DemographicData } from "./Demographics"
 import localFont from "next/font/local"
 import Image from "next/image"
@@ -70,7 +69,7 @@ const RadialChart: React.FC = () => {
     }
 
     return (
-        <div className="grid md:grid-cols-[1.5fr_8.5fr_3.15fr] gap-4 mt-10 mb-40 md:gap-4 pb-0 md:pb-0 md:mb-0">
+        <div className="grid md:grid-cols-[1.5fr_8.5fr_3.15fr] gap-4 mt-10 mb-40 md:gap-4 pb-0 md:pb-0 md:mb-10">
             <div className="bg-white-100 space-y-3 md:flex md:flex-col h-[62%]">
                 <div className={`p-3 cursor-pointer  ${activeCategory === "race" ? "bg-[#1A1B1C] text-white hover:bg-black" : "bg-[#F3F3F4]"} 
                         flex-1 flex flex-col justify-between hover:bg-[#E1E1E2] border-t`} onClick={() => handleCategoryClick("race")}>
