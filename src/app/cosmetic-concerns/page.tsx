@@ -39,7 +39,7 @@ export default function CosmeticConcernsPage() {
 
           <Disclaimer className="mt-6 md:mt-2" />
 
-          <div className="pt-4 md:pt-[37px] pb-12 bg-white sticky bottom-0 md:static z-10 mb-8 md:mb-16">
+          <div className="pt-8 md:pt-[37px] pb-28 md:pb-12 bg-white sticky bottom-0 md:static z-10 mb-0 md:mb-16">
             <div className="flex justify-between max-w-full mx-auto px-4 md:px-0">
               <Link href="/select">
                 <BackButton isWhite={false} />

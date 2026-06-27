@@ -212,12 +212,12 @@ export default function Testing() {
         )}
 
         {state.step === 1 && !isStatusLoading && (
-          <form action={formAction} className="relative z-10">
+          <form action={formAction} className="relative z-10 w-full px-4 flex flex-col items-center">
             <FormInputErrorMessage error={state.errors?.name} />
             <input
               name="name"
-              className={`text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] 
-              sm:w-[432px] pt-1 tracking-[-0.07em] leading-16 text-[#1A1B1C] placeholder:text-black placeholder:text-5xl z-10 ${roobertFontRegular.className}`}
+              className={`text-3xl sm:text-5xl md:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-full max-w-[280px]
+              sm:max-w-[432px] pt-1 tracking-[-0.07em] leading-16 text-[#1A1B1C] placeholder:text-black placeholder:text-3xl sm:placeholder:text-5xl z-10 ${roobertFontRegular.className}`}
               placeholder="Introduce Yourself"
               type="text"
               autoComplete="off"
@@ -227,12 +227,12 @@ export default function Testing() {
         )}
 
         {state.step === 2 && !isStatusLoading && !state.location && (
-          <form action={formAction} className="relative z-10">
+          <form action={formAction} className="relative z-10 w-full px-4 flex flex-col items-center">
             <FormInputErrorMessage error={state.errors?.location} />
             <input
               name="location"
-              className={`text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[400px] 
-              sm:w-[460px] pt-1 tracking-[-0.07em] leading-16 text-[#1A1B1C] placeholder:text-black placeholder:text-5xl z-10 ${roobertFontRegular.className}`}
+              className={`text-3xl sm:text-5xl md:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-full max-w-[300px]
+              sm:max-w-[460px] pt-1 tracking-[-0.07em] leading-16 text-[#1A1B1C] placeholder:text-black placeholder:text-3xl sm:placeholder:text-5xl z-10 ${roobertFontRegular.className}`}
               placeholder="Where are you from?"
               type="text"
               autoComplete="off"
@@ -267,7 +267,7 @@ export default function Testing() {
         />
       </div>
 
-      <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
+      <div className="absolute bottom-12 md:bottom-8 w-full flex justify-between px-4 md:px-9">
         <Link className="inset-0" aria-label="Back" href="/">
           <BackButton isWhite={false}/>
         </Link>

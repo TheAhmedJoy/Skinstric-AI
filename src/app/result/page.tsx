@@ -25,18 +25,16 @@ export default function Result() {
                 </div>
             </ResultModalWrapper>
 
-            <div className="pt-4 md:pt-0 pb-8 bg-white sticky md:static bottom-30.5 mb-0 md:mb-0">
-                <div className="absolute bottom-8 w-full flex justify-between md:px-9 px-13">
-                    <Link className="relative" aria-label="Back" href="/testing">
-                        <BackButton isWhite={false}/>
-                    </Link>
+            <div className="absolute bottom-12 md:bottom-8 w-full flex justify-between px-4 md:px-9">
+                <Link className="relative" aria-label="Back" href="/testing">
+                    <BackButton isWhite={false}/>
+                </Link>
 
-                    <Link href="/select">
-                        <div className="hidden">
-                            <ProceedButton isSummary={false} isHome={false}/>
-                        </div>
-                    </Link>
-                </div>
+                <Link href="/select">
+                    <div className="hidden">
+                        <ProceedButton isSummary={false} isHome={false}/>
+                    </div>
+                </Link>
             </div>
         </div>
     )

@@ -29,20 +29,22 @@ export default function Select() {
                 </p>
             </div>
 
-            <div className="h-[78.3vh] flex flex-col items-center justify-center bg-white">
+            <div className="h-[64vh] md:h-[72vh] flex flex-col items-center justify-center bg-white">
                 <SelectOptions />
             </div>
 
-            <Disclaimer className="mb-4" />
+            <div className="max-w-full mx-5 px-4 md:px-auto">
+                <Disclaimer className="mt-6 md:mt-2" />
 
-            <div className="pt-4 md:pt-2 pb-8 bg-white sticky md:static bottom-40 mb-0 md:mb-0">
-                <div className="flex justify-between max-w-full mx-auto px-13 md:px-9">
-                    <Link href="/result">
-                        <BackButton isWhite={false}/>
-                    </Link>
-                    <Link href="/demographics">
-                        <ProceedButton isSummary={true} isHome={false}/>
-                    </Link>
+                <div className="pt-8 md:pt-[37px] pb-12 bg-white static z-10">
+                    <div className="flex justify-between max-w-full mx-auto px-4 md:px-0">
+                        <Link href="/result">
+                            <BackButton isWhite={false}/>
+                        </Link>
+                        <Link href="/demographics">
+                            <ProceedButton isSummary={true} isHome={false}/>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
